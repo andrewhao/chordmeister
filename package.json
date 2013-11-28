@@ -1,0 +1,33 @@
+{
+  "name": "chord",
+  "version": "0.0.1",
+  "description": "chord =====",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewhao/chord.git"
+  },
+  "author": "Andrew Hao",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/andrewhao/chord/issues"
+  },
+  "keywords": [
+    "chord",
+    "guitar",
+    "song",
+    "lyrics",
+    "sheets"
+  ]
+}
