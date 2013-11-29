@@ -11,7 +11,7 @@
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-watch": "~0.5.2",
     "grunt-contrib-jshint": "~0.6.3",
-    "grunt-simple-mocha": "~0.4.0"
+    "grunt-mocha": "~0.4.5"
   },
   "devDependencies": {},
   "scripts": {

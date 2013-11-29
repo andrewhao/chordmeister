@@ -13,23 +13,49 @@
       describe("for lyric lines", function() {
         return it("returns type LYRIC", function() {
           var cl, lyric;
-          lyric = "I feel good, duna duna duna dun";
+          lyric = "I feel good, dunna dunna dunna dun";
           cl = new ClassifiedLine(lyric);
           return expect(cl.type()).to.equal("LYRIC");
         });
       });
-      return describe("for chord lines", function() {
+      describe("for chord lines", function() {
         it("returns type CHORD", function() {
-          var chord, cl;
-          chord = "G A D    C   A";
-          cl = new ClassifiedLine(chord);
+          var cl, line;
+          line = "G A D    C   A";
+          cl = new ClassifiedLine(line);
           return expect(cl.type()).to.equal("CHORD");
         });
-        return it("returns CHORD for complex slashed chords", function() {
-          var chord, cl;
-          chord = "A/G B/F#";
-          cl = new ClassifiedLine(chord);
+        it("returns CHORD for complex slashed chords", function() {
+          var cl, line;
+          line = "A/G B/F# F#m/G";
+          cl = new ClassifiedLine(line);
           return expect(cl.type()).to.equal("CHORD");
+        });
+        return it("returns CHORD for minor chords", function() {
+          var cl, line;
+          line = "Am Em F#m";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("CHORD");
+        });
+      });
+      return describe("for headings", function() {
+        it("returns HEADING for 'chorus'", function() {
+          var cl, line;
+          line = "CHORUS";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("HEADING");
+        });
+        it("returns HEADING for 'verse 1'", function() {
+          var cl, line;
+          line = "verse 1";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("HEADING");
+        });
+        return it("returns HEADING for 'bridge'", function() {
+          var cl, line;
+          line = "bridge";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("HEADING");
         });
       });
     });

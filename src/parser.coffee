@@ -1,24 +1,24 @@
 class @Parser
   constructor: (@text) ->
-    @classified_lines = []
 
   lines: ->
-    @text.split('\n')
+    return @lineArray if @lineArray?
 
-  parse: ->
-    @classified_lines = []
-    @lines().forEach (l, i) =>
-      @classified_lines.push new ClassifiedLine(l)
-    @classified_lines
+    @lineArray = []
+    lines = @text.split('\n')
+    lines.forEach (l, i) =>
+      @lineArray.push(new ClassifiedLine(l))
+    @lineArray
 
   chordLines: ->
     retVal = {}
-    @classified_lines.forEach (l, i) ->
+    @lines().forEach (l, i) ->
       retVal[i] = l.text if l.type() == "CHORD"
     retVal
 
   lyricLines: ->
     retVal = {}
-    @classified_lines.forEach (l, i) ->
+    @lines().forEach (l, i) ->
       retVal[i] = l.text if l.type() == "LYRIC"
     retVal
+

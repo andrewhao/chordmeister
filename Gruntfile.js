@@ -25,20 +25,20 @@ module.exports = function(grunt) {
       }
     },
 
-    simplemocha: {
-      options: {
-        timeout: 3000,
-        ignoreLeaks: false,
-        ui: 'bdd'
+    mocha: {
+      test: {
+        src: ['test/index.html'],
+        options: {
+          run: true,
+          reporter: "Spec"
+        }
       },
-
-      all: { src: [ 'build/test/**/*.js' ] }
     },
 
     watch: {
       all: {
         files: [ '{src,test}/**/*.coffee' ],
-        tasks: [ 'coffee', "simplemocha" ]
+        tasks: [ 'coffee', "mocha" ]
       }
     },
   });
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-simple-mocha');
+  grunt.loadNpmTasks('grunt-mocha');
 
   grunt.registerTask('test', []);
   grunt.registerTask('default', [ 'coffee' ]);
