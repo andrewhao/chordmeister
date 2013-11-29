@@ -17,10 +17,10 @@ module.exports = function(grunt) {
     coffee: {
       glob_to_multiple: {
         expand: true,
-        flatten: true,
-        cwd: 'test/spec',
-        src: ['**/*.coffee'],
-        dest: 'js',
+        flatten: false,
+        cwd: '',
+        src: ['{src,test}/**/*.coffee'],
+        dest: 'build',
         ext: '.js'
       }
     },
