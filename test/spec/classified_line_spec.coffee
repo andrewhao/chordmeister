@@ -44,3 +44,19 @@ describe "ClassifiedLine", ->
         line = "bridge"
         cl = new ClassifiedLine(line)
         expect(cl.type()).to.equal("HEADING")
+
+    describe "for spacers", ->
+      it "returns SPACER for blank line", ->
+        line = "\n"
+        cl = new ClassifiedLine(line)
+        expect(cl.type()).to.equal("SPACER")
+
+      it "returns SPACER for spacey blank line", ->
+        line = "\t  "
+        cl = new ClassifiedLine(line)
+        expect(cl.type()).to.equal("SPACER")
+
+      it "returns SPACER for nothing in the line", ->
+        line = ""
+        cl = new ClassifiedLine(line)
+        expect(cl.type()).to.equal("SPACER")

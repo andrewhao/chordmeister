@@ -10,6 +10,8 @@
         return "CHORD";
       } else if (this.isHeading()) {
         return "HEADING";
+      } else if (this.isBlank()) {
+        return "SPACER";
       } else {
         return "LYRIC";
       }
@@ -36,6 +38,12 @@
     ClassifiedLine.prototype.isHeading = function() {
       return this.text.match(this.headingRegex);
     };
+
+    ClassifiedLine.prototype.isBlank = function() {
+      return this.text.match(this.blankRegex);
+    };
+
+    ClassifiedLine.prototype.blankRegex = /^[\s]*$/gi;
 
     ClassifiedLine.prototype.headingRegex = /^chorus|verse|bridge/gi;
 

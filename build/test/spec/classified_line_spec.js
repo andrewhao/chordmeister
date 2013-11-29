@@ -38,7 +38,7 @@
           return expect(cl.type()).to.equal("CHORD");
         });
       });
-      return describe("for headings", function() {
+      describe("for headings", function() {
         it("returns HEADING for 'chorus'", function() {
           var cl, line;
           line = "CHORUS";
@@ -56,6 +56,26 @@
           line = "bridge";
           cl = new ClassifiedLine(line);
           return expect(cl.type()).to.equal("HEADING");
+        });
+      });
+      return describe("for spacers", function() {
+        it("returns SPACER for blank line", function() {
+          var cl, line;
+          line = "\n";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("SPACER");
+        });
+        it("returns SPACER for spacey blank line", function() {
+          var cl, line;
+          line = "\t  ";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("SPACER");
+        });
+        return it("returns SPACER for nothing in the line", function() {
+          var cl, line;
+          line = "";
+          cl = new ClassifiedLine(line);
+          return expect(cl.type()).to.equal("SPACER");
         });
       });
     });

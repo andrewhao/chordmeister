@@ -8,6 +8,8 @@ class @ClassifiedLine
       "CHORD"
     else if @isHeading()
       "HEADING"
+    else if @isBlank()
+      "SPACER"
     else
       "LYRIC"
 
@@ -24,6 +26,12 @@ class @ClassifiedLine
 
   isHeading: ->
     @text.match(@headingRegex)
+
+  isBlank: ->
+    @text.match(@blankRegex)
+
+
+  blankRegex: /^[\s]*$/gi
 
   headingRegex: /^chorus|verse|bridge/gi
 
