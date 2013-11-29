@@ -25,20 +25,31 @@ module.exports = function(grunt) {
       }
     },
 
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec'
+        },
+        require: ["coffee-script", "src/chord.js"],
+        src: ['test/spec/**/*.coffee']
+      }
+    },
+
     watch: {
       all: {
-        files:['src/coffee/*', 'test/*.coffee'],
-        tasks:['buildDev', 'buildTest', 'test']
+        files:['src/**/*.coffee'],
+        tasks:['coffee']
       }
-    }
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('test', []);
-  grunt.registerTask('default', []);
+  grunt.registerTask('default', ['coffee']);
 
 };

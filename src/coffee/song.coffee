@@ -1,6 +1,5 @@
 # A class enscapulating the raw text of a song
-class Song
-  constructor: (@lines)
+class @Song
   lyrics: ->
     console.log "outputting lyrics"
 

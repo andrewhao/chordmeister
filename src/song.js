@@ -1,13 +1,6 @@
 (function() {
-  var Song, _class, _ref;
-
-  Song = (function() {
-    function Song() {
-      _ref = _class.apply(this, arguments);
-      return _ref;
-    }
-
-    _class = Song.lines;
+  this.Song = (function() {
+    function Song() {}
 
     Song.prototype.lyrics = function() {
       return console.log("outputting lyrics");
