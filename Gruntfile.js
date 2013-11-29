@@ -18,21 +18,22 @@ module.exports = function(grunt) {
       glob_to_multiple: {
         expand: true,
         flatten: true,
-        cwd: 'src',
-        src: ['coffee/**/*.coffee'],
-        dest: 'src',
+        cwd: 'test/spec',
+        src: ['**/*.coffee'],
+        dest: 'js',
         ext: '.js'
       }
     },
 
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec'
-        },
-        require: ["coffee-script", "src/chord.js"],
-        src: ['test/spec/**/*.coffee']
-      }
+    simplemocha: {
+      options: {
+        timeout: 3000,
+        ignoreLeaks: false,
+        ui: 'bdd',
+        reporter: 'tap'
+      },
+
+      all: { src: ['test/**/*.js'] }
     },
 
     watch: {
@@ -47,7 +48,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
   grunt.registerTask('test', []);
   grunt.registerTask('default', ['coffee']);
