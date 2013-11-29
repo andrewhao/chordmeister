@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         expand: true,
         flatten: false,
         cwd: '',
-        src: ['{src,test}/**/*.coffee'],
+        src: [ '{src,test}/**/*.coffee' ],
         dest: 'build',
         ext: '.js'
       }
@@ -29,17 +29,16 @@ module.exports = function(grunt) {
       options: {
         timeout: 3000,
         ignoreLeaks: false,
-        ui: 'bdd',
-        reporter: 'tap'
+        ui: 'bdd'
       },
 
-      all: { src: ['test/**/*.js'] }
+      all: { src: [ 'build/test/**/*.js' ] }
     },
 
     watch: {
       all: {
-        files:['src/**/*.coffee'],
-        tasks:['coffee']
+        files: [ '{src,test}/**/*.coffee' ],
+        tasks: [ 'coffee', "simplemocha" ]
       }
     },
   });
@@ -51,6 +50,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-simple-mocha');
 
   grunt.registerTask('test', []);
-  grunt.registerTask('default', ['coffee']);
+  grunt.registerTask('default', [ 'coffee' ]);
 
 };
