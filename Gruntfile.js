@@ -15,6 +15,12 @@ module.exports = function(grunt) {
     },
 
     coffee: {
+      compile: {
+        files: {
+          'build/chordmeister.js': 'src/**/*.coffee'
+        }
+      },
+
       glob_to_multiple: {
         expand: true,
         flatten: false,
