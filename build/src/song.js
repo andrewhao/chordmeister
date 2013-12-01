@@ -1,5 +1,7 @@
 (function() {
-  this.Song = (function() {
+  this.Chordmeister || (this.Chordmeister = {});
+
+  this.Chordmeister.Song = (function() {
     function Song() {}
 
     Song.prototype.lyrics = function() {

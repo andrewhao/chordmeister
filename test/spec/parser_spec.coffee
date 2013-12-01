@@ -1,17 +1,17 @@
-describe "Parser", ->
+describe "Chordmeister.Parser", ->
   beforeEach ->
     @chord1 = "A B C"
     @chord2 = "G D C"
     @line1 = "Oh say does that star spangled"
     @line2 = "banner yet waaaa-ave!"
     @text = [@chord1, @line1, @chord2, @line2].join("\n")
-    @parser = new Parser(@text)
+    @parser = new Chordmeister.Parser(@text)
 
   describe "#lines", ->
     it "returns a list of ClassifiedLines", ->
       p = @parser.lines()
       p.forEach (cl) ->
-        expect(cl instanceof ClassifiedLine).to.be.true
+        expect(cl instanceof Chordmeister.ClassifiedLine).to.be.true
 
   describe "#text", ->
     it "returns the text it was initialized with", ->

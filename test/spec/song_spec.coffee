@@ -1,4 +1,4 @@
-describe "Song", ->
+describe "Chordmeister.Song", ->
   describe "#lyrics", ->
     it "accesses constructed lyric", ->
-      s = new Song()
+      s = new Chordmeister.Song()

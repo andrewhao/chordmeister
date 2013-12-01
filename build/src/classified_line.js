@@ -1,5 +1,7 @@
 (function() {
-  this.ClassifiedLine = (function() {
+  this.Chordmeister || (this.Chordmeister = {});
+
+  this.Chordmeister.ClassifiedLine = (function() {
     function ClassifiedLine(text) {
       this.text = text;
       this.debug = false;

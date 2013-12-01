@@ -1,5 +1,7 @@
 (function() {
-  this.Parser = (function() {
+  this.Chordmeister || (this.Chordmeister = {});
+
+  this.Chordmeister.Parser = (function() {
     function Parser(text) {
       this.text = text;
     }
@@ -13,7 +15,7 @@
       this.lineArray = [];
       lines = this.text.split('\n');
       lines.forEach(function(l, i) {
-        return _this.lineArray.push(new ClassifiedLine(l));
+        return _this.lineArray.push(new Chordmeister.ClassifiedLine(l));
       });
       return this.lineArray;
     };

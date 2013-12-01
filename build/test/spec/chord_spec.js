@@ -1,10 +1,10 @@
 (function() {
-  describe("Chord", function() {
+  describe("Chordmeister.Chord", function() {
     beforeEach(function() {
-      return this.chord = new Chord;
+      return this.chord = new Chordmeister.Chord;
     });
     return it("is an instance of Chord", function() {
-      return expect(this.chord instanceof Chord).to.be["true"];
+      return expect(this.chord instanceof Chordmeister.Chord).to.be["true"];
     });
   });
 

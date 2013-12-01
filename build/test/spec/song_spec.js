@@ -1,9 +1,9 @@
 (function() {
-  describe("Song", function() {
+  describe("Chordmeister.Song", function() {
     return describe("#lyrics", function() {
       return it("accesses constructed lyric", function() {
         var s;
-        return s = new Song();
+        return s = new Chordmeister.Song();
       });
     });
   });

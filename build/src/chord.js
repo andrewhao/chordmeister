@@ -1,5 +1,7 @@
 (function() {
-  this.Chord = (function() {
+  this.Chordmeister || (this.Chordmeister = {});
+
+  this.Chordmeister.Chord = (function() {
     function Chord(word) {
       this.word = word;
       console.log("constructing chord with word " + word);

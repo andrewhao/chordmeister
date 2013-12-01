@@ -1,4 +1,5 @@
-class @Parser
+@Chordmeister ||= {}
+class @Chordmeister.Parser
   constructor: (@text) ->
 
   lines: ->
@@ -7,7 +8,7 @@ class @Parser
     @lineArray = []
     lines = @text.split('\n')
     lines.forEach (l, i) =>
-      @lineArray.push(new ClassifiedLine(l))
+      @lineArray.push(new Chordmeister.ClassifiedLine(l))
     @lineArray
 
   chordLines: ->

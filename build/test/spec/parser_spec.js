@@ -1,19 +1,19 @@
 (function() {
-  describe("Parser", function() {
+  describe("Chordmeister.Parser", function() {
     beforeEach(function() {
       this.chord1 = "A B C";
       this.chord2 = "G D C";
       this.line1 = "Oh say does that star spangled";
       this.line2 = "banner yet waaaa-ave!";
       this.text = [this.chord1, this.line1, this.chord2, this.line2].join("\n");
-      return this.parser = new Parser(this.text);
+      return this.parser = new Chordmeister.Parser(this.text);
     });
     describe("#lines", function() {
       return it("returns a list of ClassifiedLines", function() {
         var p;
         p = this.parser.lines();
         return p.forEach(function(cl) {
-          return expect(cl instanceof ClassifiedLine).to.be["true"];
+          return expect(cl instanceof Chordmeister.ClassifiedLine).to.be["true"];
         });
       });
     });

@@ -1,5 +1,6 @@
 # A class enscapulating the raw text of a song
-class @Song
+@Chordmeister ||= {}
+class @Chordmeister.Song
   lyrics: ->
     console.log "outputting lyrics"
 

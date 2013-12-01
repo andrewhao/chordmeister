@@ -1,5 +1,6 @@
 # A container object for a line and its classification
-class @ClassifiedLine
+@Chordmeister ||= {}
+class @Chordmeister.ClassifiedLine
   constructor: (@text) ->
     @debug = false
 
