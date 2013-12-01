@@ -30,12 +30,17 @@
         });
       });
     });
-    return describe("#lyricLines", function() {
+    describe("#lyricLines", function() {
       return it("returns the chord and the line number it is associated with", function() {
         return expect(this.parser.lyricLines()).to.eql({
           1: this.line1,
           3: this.line2
         });
+      });
+    });
+    return describe("#lyricText", function() {
+      return it("returns a lyric on each line, in the order it was given", function() {
+        return expect(this.parser.lyricText()).to.eql("" + this.line1 + "\n" + this.line2);
       });
     });
   });

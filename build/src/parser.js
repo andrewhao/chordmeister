@@ -42,6 +42,17 @@
       return retVal;
     };
 
+    Parser.prototype.lyricText = function() {
+      var line, num, text, _ref;
+      text = [];
+      _ref = this.lyricLines();
+      for (num in _ref) {
+        line = _ref[num];
+        text.push(line);
+      }
+      return text.join('\n');
+    };
+
     return Parser;
 
   })();

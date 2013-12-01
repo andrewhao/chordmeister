@@ -29,3 +29,7 @@ describe "Chordmeister.Parser", ->
       expect(@parser.lyricLines()).to.eql
         1: @line1
         3: @line2
+
+  describe "#lyricText", ->
+    it "returns a lyric on each line, in the order it was given", ->
+      expect(@parser.lyricText()).to.eql("#{@line1}\n#{@line2}")

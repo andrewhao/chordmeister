@@ -23,3 +23,9 @@ class @Chordmeister.Parser
       retVal[i] = l.text if l.type() == "LYRIC"
     retVal
 
+  lyricText: ->
+    text = []
+    for num, line of @lyricLines()
+      text.push(line)
+    text.join('\n')
+
