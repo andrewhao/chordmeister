@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "grunt-es6-module-transpiler": "~0.6.0",
-    "grunt-simple-mocha": "~0.4.0"
+    "grunt-simple-mocha": "~0.4.0",
+    "requirejs": "~2.1.14"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

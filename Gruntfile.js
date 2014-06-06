@@ -44,20 +44,20 @@ module.exports = function(grunt) {
       all: { src: ['tmp/test/**/*.js'] }
     },
 
-    //mocha: {
-    //  test: {
-    //    src: ['test/index.html'],
-    //    options: {
-    //      run: true,
-    //      reporter: "Spec"
-    //    }
-    //  },
-    //},
+    mocha: {
+      test: {
+        src: ['test/index.html'],
+        options: {
+          run: true,
+          reporter: "Spec"
+        }
+      },
+    },
 
     watch: {
       all: {
         files: [ '{src,test}/**/*.coffee' ],
-        tasks: [ 'coffee', "simplemocha" ]
+        tasks: [ 'coffee', "mocha" ]
       }
     },
 
@@ -78,11 +78,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  //grunt.loadNpmTasks('grunt-mocha');
+  grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-es6-module-transpiler');
 
-  grunt.registerTask('test', ['transpile:enable', 'simplemocha']);
+  grunt.registerTask('test', ['coffee', 'transpile', 'mocha']);
   grunt.registerTask('default', [ 'coffee' ]);
 
 };
