@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'build/chordmeister.js': 'src/chordmeister/**/*.coffee'
+          'tmp/chordmeister.js': 'src/chordmeister/**/*.coffee'
         }
       },
 
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         flatten: false,
         cwd: '',
         src: [ '{src,test}/**/*.coffee' ],
-        dest: 'build',
+        dest: 'tmp',
         ext: '.js'
       }
     },
@@ -53,9 +53,9 @@ module.exports = function(grunt) {
         type: "amd",
         files: [{
           expand: true,
-          cwd: "build/src/",
+          cwd: "tmp/src/",
           src: ["**/*.js"],
-          dest: "build/modules/"
+          dest: "build/"
         }]
       }
     }
