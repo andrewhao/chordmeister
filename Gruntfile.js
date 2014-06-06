@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'build/chordmeister.js': 'src/**/*.coffee'
+          'build/chordmeister.js': 'src/chordmeister/**/*.coffee'
         }
       },
 
@@ -47,6 +47,18 @@ module.exports = function(grunt) {
         tasks: [ 'coffee', "mocha" ]
       }
     },
+
+    transpile: {
+      main: {
+        type: "amd",
+        files: [{
+          expand: true,
+          cwd: "build/src/",
+          src: ["**/*.js"],
+          dest: "build/modules/"
+        }]
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -54,6 +66,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha');
+  grunt.loadNpmTasks('grunt-es6-module-transpiler');
 
   grunt.registerTask('test', []);
   grunt.registerTask('default', [ 'coffee' ]);
