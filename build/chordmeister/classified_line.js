@@ -59,7 +59,7 @@ define("chordmeister/classified_line",
 
       })();
 
-      export default ClassifiedLine;
+      export default = ClassifiedLine;
 
     }).call(this);
   });

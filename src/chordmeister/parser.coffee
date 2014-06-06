@@ -1,3 +1,4 @@
+`import ClassifiedLine from 'chordmeister/classified_line'`
 class Parser
   constructor: (@text) ->
 
@@ -7,7 +8,7 @@ class Parser
     @lineArray = []
     lines = @text.split('\n')
     lines.forEach (l, i) =>
-      @lineArray.push(new Chordmeister.ClassifiedLine(l))
+      @lineArray.push(new ClassifiedLine(l))
     @lineArray
 
   chordLines: ->
@@ -28,4 +29,4 @@ class Parser
       text.push(line)
     text.join('\n')
 
-`export default Parser`
+`export default = Parser`

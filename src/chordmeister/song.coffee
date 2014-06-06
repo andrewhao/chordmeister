@@ -6,4 +6,4 @@ class Song
   chords: ->
     console.log "outputting chords"
 
-`export default Song`
+`export default = Song`

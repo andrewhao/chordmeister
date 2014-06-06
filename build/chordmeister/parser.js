@@ -3,6 +3,7 @@ define("chordmeister/parser",
   function() {
     "use strict";
     (function() {
+      import ClassifiedLine from 'chordmeister/classified_line';
       var Parser;
 
       Parser = (function() {
@@ -19,7 +20,7 @@ define("chordmeister/parser",
           this.lineArray = [];
           lines = this.text.split('\n');
           lines.forEach(function(l, i) {
-            return _this.lineArray.push(new Chordmeister.ClassifiedLine(l));
+            return _this.lineArray.push(new ClassifiedLine(l));
           });
           return this.lineArray;
         };

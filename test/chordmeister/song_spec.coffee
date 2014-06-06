@@ -1,4 +1,5 @@
-describe "Chordmeister.Song", ->
-  describe "#lyrics", ->
-    it "accesses constructed lyric", ->
-      s = new Chordmeister.Song()
+require ['chordmeister/song'], (Song) ->
+  describe "Song", ->
+    describe "#lyrics", ->
+      it "accesses constructed lyric", ->
+        s = new Song()

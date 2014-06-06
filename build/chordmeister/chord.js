@@ -15,7 +15,7 @@ define("chordmeister/chord",
 
       })();
 
-      export default Chord;
+      export default = Chord;
 
     }).call(this);
   });
