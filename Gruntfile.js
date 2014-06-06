@@ -31,20 +31,33 @@ module.exports = function(grunt) {
       }
     },
 
-    mocha: {
-      test: {
-        src: ['test/index.html'],
-        options: {
-          run: true,
-          reporter: "Spec"
-        }
+    simplemocha: {
+      options: {
+        //globals: [''],
+        timeout: 3000,
+        ignoreLeaks: false,
+        //grep: '*_spec',
+        ui: 'bdd',
+        reporter: 'spec'
       },
+
+      all: { src: ['tmp/test/**/*.js'] }
     },
+
+    //mocha: {
+    //  test: {
+    //    src: ['test/index.html'],
+    //    options: {
+    //      run: true,
+    //      reporter: "Spec"
+    //    }
+    //  },
+    //},
 
     watch: {
       all: {
         files: [ '{src,test}/**/*.coffee' ],
-        tasks: [ 'coffee', "mocha" ]
+        tasks: [ 'coffee', "simplemocha" ]
       }
     },
 
@@ -65,10 +78,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-mocha');
+  //grunt.loadNpmTasks('grunt-mocha');
+  grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-es6-module-transpiler');
 
-  grunt.registerTask('test', []);
+  grunt.registerTask('test', ['transpile:enable', 'simplemocha']);
   grunt.registerTask('default', [ 'coffee' ]);
 
 };

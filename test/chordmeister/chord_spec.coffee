@@ -1,5 +1,6 @@
-describe "Chordmeister.Chord", ->
+`import Chord from 'chordmeister/chord'`
+describe "Chord", ->
   beforeEach ->
-    @chord = new Chordmeister.Chord
+    @chord = new Chord
   it "is an instance of Chord", ->
-    expect(@chord instanceof Chordmeister.Chord).to.be.true
+    expect(@chord instanceof Chord).to.be.true

@@ -3,9 +3,9 @@ define("chordmeister/song",
   function() {
     "use strict";
     (function() {
-      this.Chordmeister || (this.Chordmeister = {});
+      var Song;
 
-      this.Chordmeister.Song = (function() {
+      Song = (function() {
         function Song() {}
 
         Song.prototype.lyrics = function() {
@@ -19,6 +19,8 @@ define("chordmeister/song",
         return Song;
 
       })();
+
+      export default Song;
 
     }).call(this);
   });

@@ -3,9 +3,9 @@ define("chordmeister/parser",
   function() {
     "use strict";
     (function() {
-      this.Chordmeister || (this.Chordmeister = {});
+      var Parser;
 
-      this.Chordmeister.Parser = (function() {
+      Parser = (function() {
         function Parser(text) {
           this.text = text;
         }
@@ -60,6 +60,8 @@ define("chordmeister/parser",
         return Parser;
 
       })();
+
+      export default Parser;
 
     }).call(this);
   });

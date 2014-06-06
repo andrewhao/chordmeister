@@ -3,9 +3,9 @@ define("chordmeister/classified_line",
   function() {
     "use strict";
     (function() {
-      this.Chordmeister || (this.Chordmeister = {});
+      var ClassifiedLine;
 
-      this.Chordmeister.ClassifiedLine = (function() {
+      ClassifiedLine = (function() {
         function ClassifiedLine(text) {
           this.text = text;
           this.debug = false;
@@ -58,6 +58,8 @@ define("chordmeister/classified_line",
         return ClassifiedLine;
 
       })();
+
+      export default ClassifiedLine;
 
     }).call(this);
   });

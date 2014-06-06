@@ -1,5 +1,4 @@
-@Chordmeister ||= {}
-class @Chordmeister.Parser
+class Parser
   constructor: (@text) ->
 
   lines: ->
@@ -29,3 +28,4 @@ class @Chordmeister.Parser
       text.push(line)
     text.join('\n')
 
+`export default Parser`
