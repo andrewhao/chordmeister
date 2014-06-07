@@ -15,8 +15,6 @@ require(specs, function(require) {
   expect = chai.expect;
   // Why? Some async loading condition? Is there a cb I should be hooking into?
   setTimeout(function() {
-    console.log("mocha is: " + JSON.stringify(mocha.options))
-    console.log("PHANTOMJS is: ", JSON.stringify(window.PHANTOMJS))
     mocha.run();
   }, 100);
 })
