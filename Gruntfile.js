@@ -14,37 +14,23 @@ module.exports = function(grunt) {
       }
     },
 
-    coffee: {
-      compile: {
-        files: {
-          'build/chordmeister.js': 'src/chordmeister/**/*.coffee'
-        }
-      },
-
-      glob_to_multiple: {
-        expand: true,
-        flatten: false,
-        cwd: '',
-        src: [ '{src,test}/**/*.coffee' ],
-        dest: 'build',
-        ext: '.js'
-      }
-    },
-
     mocha: {
       test: {
         src: ['test/index.html'],
         options: {
-          run: true,
-          reporter: "Spec"
+          run: false,
+          reporter: "Spec",
+          growlOnSuccess: true,
+          log: true,
+          logErrors: true
         }
       },
     },
 
     watch: {
       all: {
-        files: [ '{src,test}/**/*.coffee' ],
-        tasks: [ 'coffee', "mocha" ]
+        files: [ '{src,test}/**/*.js' ],
+        tasks: [ "transpile", "mocha" ]
       }
     },
 
@@ -53,9 +39,9 @@ module.exports = function(grunt) {
         type: "amd",
         files: [{
           expand: true,
-          cwd: "build/src/",
+          cwd: "src/",
           src: ["**/*.js"],
-          dest: "build/modules/"
+          dest: "build/"
         }]
       }
     }
@@ -63,12 +49,10 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-es6-module-transpiler');
 
-  grunt.registerTask('test', []);
-  grunt.registerTask('default', [ 'coffee' ]);
+  grunt.registerTask('test', ['transpile', 'mocha']);
+  grunt.registerTask('default', [ 'transpile' ]);
 
 };

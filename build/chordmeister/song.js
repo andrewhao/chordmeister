@@ -1,7 +1,8 @@
-(function() {
-  this.Chordmeister || (this.Chordmeister = {});
-
-  this.Chordmeister.Song = (function() {
+define("chordmeister/song", 
+  ["exports"],
+  function(__exports__) {
+    "use strict";
+    // Represents a set of ClassifiedLines
     function Song() {}
 
     Song.prototype.lyrics = function() {
@@ -12,8 +13,5 @@
       return console.log("outputting chords");
     };
 
-    return Song;
-
-  })();
-
-}).call(this);
+    __exports__["default"] = Song;
+  });

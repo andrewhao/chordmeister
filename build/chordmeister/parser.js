@@ -1,7 +1,9 @@
-(function() {
-  this.Chordmeister || (this.Chordmeister = {});
+define("chordmeister/parser", 
+  ["chordmeister/classified_line","exports"],
+  function(__dependency1__, __exports__) {
+    "use strict";
+    var ClassifiedLine = __dependency1__["default"];
 
-  this.Chordmeister.Parser = (function() {
     function Parser(text) {
       this.text = text;
     }
@@ -15,7 +17,7 @@
       this.lineArray = [];
       lines = this.text.split('\n');
       lines.forEach(function(l, i) {
-        return _this.lineArray.push(new Chordmeister.ClassifiedLine(l));
+        return _this.lineArray.push(new ClassifiedLine(l));
       });
       return this.lineArray;
     };
@@ -53,8 +55,5 @@
       return text.join('\n');
     };
 
-    return Parser;
-
-  })();
-
-}).call(this);
+    __exports__["default"] = Parser;
+  });
