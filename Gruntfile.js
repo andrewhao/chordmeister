@@ -53,6 +53,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-es6-module-transpiler');
 
   grunt.registerTask('test', ['transpile', 'mocha']);
-  grunt.registerTask('default', [ ]);
+  grunt.registerTask('default', [ 'transpile' ]);
 
 };
