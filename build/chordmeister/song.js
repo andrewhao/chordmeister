@@ -1,26 +1,17 @@
 define("chordmeister/song", 
-  [],
-  function() {
+  ["exports"],
+  function(__exports__) {
     "use strict";
-    (function() {
-      var Song;
+    // Represents a set of ClassifiedLines
+    function Song() {}
 
-      Song = (function() {
-        function Song() {}
+    Song.prototype.lyrics = function() {
+      return console.log("outputting lyrics");
+    };
 
-        Song.prototype.lyrics = function() {
-          return console.log("outputting lyrics");
-        };
+    Song.prototype.chords = function() {
+      return console.log("outputting chords");
+    };
 
-        Song.prototype.chords = function() {
-          return console.log("outputting chords");
-        };
-
-        return Song;
-
-      })();
-
-      export default = Song;
-
-    }).call(this);
+    __exports__["default"] = Song;
   });

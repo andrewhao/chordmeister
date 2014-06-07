@@ -1,13 +1,12 @@
-(function() {
-  require(['chordmeister/song'], function(Song) {
-    return describe("Song", function() {
-      return describe("#lyrics", function() {
-        return it("accesses constructed lyric", function() {
-          var s;
-          return s = new Song();
-        });
+require(['chordmeister/song'], function(song) {
+  Song = song.default
+
+  describe("Song", function() {
+    describe("#lyrics", function() {
+      it("accesses constructed lyric", function() {
+        var s;
+        s = new Song();
       });
     });
   });
-
-}).call(this);
+});
