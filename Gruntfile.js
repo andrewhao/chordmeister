@@ -14,26 +14,15 @@ module.exports = function(grunt) {
       }
     },
 
-
-    simplemocha: {
-      options: {
-        //globals: [''],
-        timeout: 3000,
-        ignoreLeaks: false,
-        //grep: '*_spec',
-        ui: 'bdd',
-        reporter: 'spec'
-      },
-
-      all: { src: ['test/**/*.js'] }
-    },
-
     mocha: {
       test: {
         src: ['test/index.html'],
         options: {
-          run: true,
-          reporter: "Spec"
+          run: false,
+          reporter: "Spec",
+          growlOnSuccess: true,
+          log: true,
+          logErrors: true
         }
       },
     },
@@ -41,7 +30,7 @@ module.exports = function(grunt) {
     watch: {
       all: {
         files: [ '{src,test}/**/*.js' ],
-        tasks: [ "mocha" ]
+        tasks: [ "transpile", "mocha" ]
       }
     },
 
@@ -60,9 +49,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha');
-  grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-es6-module-transpiler');
 
   grunt.registerTask('test', ['transpile', 'mocha']);

@@ -16,5 +16,5 @@ require(specs, function(require) {
   // Why? Some async loading condition? Is there a cb I should be hooking into?
   setTimeout(function() {
     mocha.run();
-  }, 10);
+  }, 100);
 })

@@ -1,34 +1,32 @@
 {
-  "name": "chord",
+  "name": "chordmeister",
   "version": "0.0.1",
   "description": "chord =====",
-  "main": "index.js",
+  "main": "build/chordmeister/parser.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-watch": "~0.5.2",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-mocha": "~0.4.5"
+    "grunt-contrib-jshint": "~0.6.3"
   },
   "devDependencies": {
     "grunt-es6-module-transpiler": "~0.6.0",
-    "grunt-simple-mocha": "~0.4.0",
+    "grunt-mocha": "~0.4.5",
     "requirejs": "~2.1.14"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/andrewhao/chord.git"
+    "url": "git://github.com/andrewhao/chordmeister.git"
   },
   "author": "Andrew Hao",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/andrewhao/chord/issues"
+    "url": "https://github.com/andrewhao/chordmeister/issues"
   },
   "keywords": [
     "chord",
