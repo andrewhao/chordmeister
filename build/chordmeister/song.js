@@ -20,7 +20,7 @@ define("chordmeister/song",
 
       })();
 
-      export default Song;
+      export default = Song;
 
     }).call(this);
   });

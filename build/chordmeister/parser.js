@@ -62,7 +62,7 @@ define("chordmeister/parser",
 
       })();
 
-      export default Parser;
+      export default = Parser;
 
     }).call(this);
   });
