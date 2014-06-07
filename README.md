@@ -1,6 +1,7 @@
 chordmeister
 ============
 
+<<<<<<< HEAD
 AMD library to take guitar chord text from the Internet (e.g. from [Ultimate Guitar](http://www.ultimate-guitar.com/)) and allow you to manipulate them like objects.
 
 ## Installation
@@ -40,3 +41,9 @@ require(["chordmeister/parser"], function(parser) {
 ## Testing
 
     $ grunt test
+=======
+Parse some chords.
+
+[![Build Status](https://travis-ci.org/andrewhao/chordmeister.png?branch=master)](https://travis-ci.org/andrewhao/chordmeister)
+[![Code Climate](https://codeclimate.com/github/andrewhao/chordmeister.png)](https://codeclimate.com/github/andrewhao/chordmeister)
+>>>>>>> efc8f3491f8026d09c2f60ce42802669ad06844a
