@@ -6,7 +6,10 @@ require.config({
 var specs = [
   'chordmeister/chord_spec.js',
   'chordmeister/song_spec.js',
+  'chordmeister/line_spec.js',
   'chordmeister/parser_spec.js',
+  'chordmeister/phrase_spec.js',
+  'chordmeister/phrase_generator_spec.js',
   'chordmeister/classified_line_spec.js',
 ];
 
