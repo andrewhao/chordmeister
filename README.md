@@ -38,6 +38,62 @@ require(["chordmeister/parser"], function(parser) {
     p.chordLines()[0].text // "A                 E                 F#m             D"
     p.lyricLines()[0].text // "Anger he smiles towering in shiny metallic purple armor"
 }
+
+song = new SongGenerator(songText);
+song.lines # => [<Line>, <Line>]
+line = song.lines[0]
+line.phrases # => [<Phrase>, <Phrase>]
+
+
+line = new Line("Oh say can you see", "A      G      ")
+line.phrases
+line.phrases # => [<Phrase>, <Phrase>]
+
+phrase = line.phrases[0]
+phrase.lyric // "Oh say"
+phrase.chord // "A"
+
+```
+
+## Phrases
+
+Phrases are corresopnding chords and lyrics that belong together in the
+flow of the song.
+
+```
+A
+Anger he smiles
+```
+
+```
+E
+towering in shiny
+```
+
+```
+lyrics
+chords
+
+lines that are chords
+lines that are lyrics
+
+phrase: words that correspond to a single chord
+line: collection of phrases to express musical/lyrical idea
+song: collection of lines
+```
+
+```js
+// lines => ["oh say can you see", "by the dawn's early light"]
+// chords => ["a    b", "g     a"]
+// lines = [
+// {"lyric": "oh say can you see",
+    "chords": "a     b"}
+p = new PhraseGenerator(lines, chords)
+lines = p.lines() // a collection of Phrase obj
+line = lines[0]
+line.phrases
+// [{"chord": "A"
+//   "lyric": "Anger he smiles"}, ...]
 ```
 
 ## Testing

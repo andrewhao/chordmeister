@@ -2,6 +2,7 @@ define("chordmeister/classified_line",
   ["exports"],
   function(__exports__) {
     "use strict";
+    // A line of text corresponding to a line in the tab
     function ClassifiedLine(text) {
       this.text = text;
       this.debug = false;

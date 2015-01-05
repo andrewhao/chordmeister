@@ -1,3 +1,4 @@
+// A line of text corresponding to a line in the tab
 function ClassifiedLine(text) {
   this.text = text;
   this.debug = false;
